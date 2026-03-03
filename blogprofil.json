@@ -1,4 +1,179 @@
 {
+  "rika_ishimori": {
+    "name_jp": "石森 璃花",
+    "name_romaji": "Rika Ishimori",
+    "img": "https://sakurazaka46.com/images/14/cd8/11c3587bb87a5ddc9e4e63f941bf1/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/59"
+  },
+  "rina_inoue": {
+    "name_jp": "井上 梨名",
+    "name_romaji": "Rina Inoue",
+    "img": "https://sakurazaka46.com/images/14/b19/4b9bfd6d600102f911b94c1ada103/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/43"
+  },
+  "hikari_endo": {
+    "name_jp": "遠藤 光莉",
+    "name_romaji": "Hikari Endo",
+    "img": "https://sakurazaka46.com/images/14/857/d0120b9769f3d70674079f22bfb93/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/53"
+  },
+  "riko_endo": {
+    "name_jp": "遠藤 理子",
+    "name_romaji": "Riko Endo",
+    "img": "https://sakurazaka46.com/images/14/b22/3713b6987a8e214d6fe5a57854634/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/60"
+  },
+  "rei_ozono": {
+    "name_jp": "大園 玲",
+    "name_romaji": "Rei Ozono",
+    "img": "https://sakurazaka46.com/images/14/24b/9ec4f53fd6bdff10e11184718fdc6/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/54"
+  },
+  "akiho_onuma": {
+    "name_jp": "大沼 晶保",
+    "name_romaji": "Akiho Onuma",
+    "img": "https://sakurazaka46.com/images/14/12f/8c6160d77812688b7e5f29b89119c/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/55"
+  },
+  "reina_odakura": {
+    "name_jp": "小田倉 麗奈",
+    "name_romaji": "Reina Odakura",
+    "img": "https://sakurazaka46.com/images/14/263/20608a9c45d8afddc128ae180ab71/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/61"
+  },
+  "minami_koike": {
+    "name_jp": "小池 美波",
+    "name_romaji": "Minami Koike",
+    "img": "https://sakurazaka46.com/images/14/placeholder.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/06"
+  },
+  "marino_kousaka": {
+    "name_jp": "幸阪 茉里乃",
+    "name_romaji": "Marino Kousaka",
+    "img": "https://sakurazaka46.com/images/14/2f9/1e452e7822839ea7c313a6f72beca/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/56"
+  },
+  "nagisa_kojima": {
+    "name_jp": "小島 凪紗",
+    "name_romaji": "Nagisa Kojima",
+    "img": "https://sakurazaka46.com/images/14/44a/4e7a8c8ab86faba15404dffa70f48/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/62"
+  },
+  "yui_takemoto": {
+    "name_jp": "武元 唯衣",
+    "name_romaji": "Yui Takemoto",
+    "img": "https://sakurazaka46.com/images/14/fde/33bda495de83cc021bc791ee1f815/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/45"
+  },
+  "airi_taniguchi": {
+    "name_jp": "谷口 愛季",
+    "name_romaji": "Airi Taniguchi",
+    "img": "https://sakurazaka46.com/images/14/025/cbcd2e8333953131b14d1e1b85ffe/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/63"
+  },
+  "hono_tamura": {
+    "name_jp": "田村 保乃",
+    "name_romaji": "Hono Tamura",
+    "img": "https://sakurazaka46.com/images/14/d78/15b07c7fcfa61ee38717e3ead9190/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/46"
+  },
+  "yuzuki_nakashima": {
+    "name_jp": "中嶋 優月",
+    "name_romaji": "Yuzuki Nakashima",
+    "img": "https://sakurazaka46.com/images/14/7e9/80345b3421394aac9b2ce72b0c6f5/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/64"
+  },
+  "karin_fujiyoshi": {
+    "name_jp": "藤吉 夏鈴",
+    "name_romaji": "Karin Fujiyoshi",
+    "img": "https://sakurazaka46.com/images/14/ac8/bdf305ca6fe3150253309e3162b38/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/47"
+  },
+  "kira_masumoto": {
+    "name_jp": "増本 綺良",
+    "name_romaji": "Kira Masumoto",
+    "img": "https://sakurazaka46.com/images/14/b0b/6c435985fee683a63a4e111d08c66/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/57"
+  },
+  "rina_matsuda": {
+    "name_jp": "松田 里奈",
+    "name_romaji": "Rina Matsuda",
+    "img": "https://sakurazaka46.com/images/14/751/48de20a8332db5f761ac1277f5e55/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/48"
+  },
+  "mio_matono": {
+    "name_jp": "的な 美青",
+    "name_romaji": "Mio Matono",
+    "img": "https://sakurazaka46.com/images/14/b8b/bfc2cd7717c347546f5d88dcc5521/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/65"
+  },
+  "itoha_mukai": {
+    "name_jp": "向井 純葉",
+    "name_romaji": "Itoha Mukai",
+    "img": "https://sakurazaka46.com/images/14/e82/320adae04d6b88c9ec11f065b8d9e/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/66"
+  },
+  "yu_murai": {
+    "name_jp": "村井 優",
+    "name_romaji": "Yu Murai",
+    "img": "https://sakurazaka46.com/images/14/f66/d3ee063660b09ae19c9ae6faddb3b/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/67"
+  },
+  "miu_murayama": {
+    "name_jp": "村山 美羽",
+    "name_romaji": "Miu Murayama",
+    "img": "https://sakurazaka46.com/images/14/8cd/9eae10b884ede12c4445a0958b70f/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/68"
+  },
+  "hikaru_morita": {
+    "name_jp": "森田 ひかる",
+    "name_romaji": "Hikaru Morita",
+    "img": "https://sakurazaka46.com/images/14/653/60ba6e0df07c5a0f5dedf11db6186/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/50"
+  },
+  "rena_moriya": {
+    "name_jp": "守屋 麗奈",
+    "name_romaji": "Rena Moriya",
+    "img": "https://sakurazaka46.com/images/14/ca6/ea887c53d101dcd1ec2154334e1b1/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/58"
+  },
+  "ten_yamasaki": {
+    "name_jp": "山﨑 天",
+    "name_romaji": "Ten Yamasaki",
+    "img": "https://sakurazaka46.com/images/14/d79/76fa08f7e62c5b15ff4ba200ba199/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/51"
+  },
+  "shizuki_yamashita": {
+    "name_jp": "山下 瞳月",
+    "name_romaji": "Shizuki Yamashita",
+    "img": "https://sakurazaka46.com/images/14/f38/3108b02a46500ce0d6093234a2dc0/400_320_102400.jpg",
+    "desc": "",
+    "link": "https://sakurazaka46.com/s/s46/artist/69"
+  },
   "asai_konomi": {
     "name_jp": "浅井 恋乃未",
     "name_romaji": "Konomi Asai",
