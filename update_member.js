@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 // Konfigurasi URL
 const PROXY_URL = "https://cors-proxy1.vercel.app/api/fetch?url=";
@@ -6,53 +7,65 @@ const TARGET_URL = "https://sakurazaka46.com/s/s46/search/artist";
 
 async function scrapeSakurazaka() {
   try {
-    console.log("Mengambil data terbaru dari Sakurazaka46...");
+    console.log("--- Memulai Sinkronisasi Data ---");
+    
     const response = await fetch(PROXY_URL + encodeURIComponent(TARGET_URL));
+    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+    
     const html = await response.text();
+    console.log("Data HTML berhasil diambil dari proxy.");
 
     // Regex untuk mengambil setiap blok member
     const memberBlocks = html.match(/<li class="box"[\s\S]*?<\/li>/g);
-    if (!memberBlocks) throw new Error("Format HTML berubah, tidak bisa parsing.");
+    if (!memberBlocks) {
+        console.error("HTML yang diterima tidak mengandung class 'box'.");
+        process.exit(1);
+    }
 
-    // Baca file blogprofil.json yang sudah ada
-    const filePath = './blogprofil.json';
+    // Gunakan path absolute agar GitHub Action tidak bingung
+    const filePath = path.join(__dirname, 'blogprofil.json');
+    
+    if (!fs.existsSync(filePath)) {
+        throw new Error("File blogprofil.json tidak ditemukan di root repository.");
+    }
+
     let blogProfil = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    let updateCount = 0;
 
     memberBlocks.forEach(block => {
-      // Ekstrak Nama Romaji
+      // Ekstrak Nama Romaji (Menghapus komentar wovn-src)
       const nameMatch = block.match(/<p class="name">([\s\S]*?)<\/p>/);
-      const nameRomaji = nameMatch ? nameMatch[1].replace(//g, '').trim() : null;
-
-      // Ekstrak Image URL
-      const imgMatch = block.match(/<img src="([\s\S]*?)"/);
-      let imgPath = imgMatch ? imgMatch[1] : "";
-      const imgFullUrl = imgPath.startsWith('http') ? imgPath : "https://sakurazaka46.com" + imgPath;
-
-      // Ekstrak Link Profile
-      const linkMatch = block.match(/<a href="([\s\S]*?)"/);
-      let linkPath = linkMatch ? linkMatch[1] : "";
-      const linkFullUrl = "https://sakurazaka46.com" + linkPath.split('?')[0];
+      let nameRomaji = nameMatch ? nameMatch[1].replace(//g, '').trim() : null;
 
       if (nameRomaji) {
+        // Ekstrak Image URL
+        const imgMatch = block.match(/<img src="([\s\S]*?)"/);
+        let imgPath = imgMatch ? imgMatch[1] : "";
+        const imgFullUrl = imgPath.startsWith('http') ? imgPath : "https://sakurazaka46.com" + imgPath;
+
+        // Ekstrak Link Profile
+        const linkMatch = block.match(/<a href="([\s\S]*?)"/);
+        let linkPath = linkMatch ? linkMatch[1] : "";
+        const linkFullUrl = "https://sakurazaka46.com" + linkPath.split('?')[0];
+
         // Cari key di JSON yang punya name_romaji yang sama
         for (let key in blogProfil) {
-          if (blogProfil[key].name_romaji.toLowerCase() === nameRomaji.toLowerCase()) {
-            // Update hanya Image dan Link (agar desc tidak hilang)
+          if (blogProfil[key].name_romaji.trim().toLowerCase() === nameRomaji.toLowerCase()) {
             blogProfil[key].img = imgFullUrl;
             blogProfil[key].link = linkFullUrl;
-            console.log(`✅ Updated: ${nameRomaji}`);
+            updateCount++;
           }
         }
       }
     });
 
-    // Simpan kembali ke blogprofil.json
+    // Simpan kembali ke blogprofil.json dengan format yang rapi
     fs.writeFileSync(filePath, JSON.stringify(blogProfil, null, 2), 'utf8');
-    console.log("Berhasil memperbarui blogprofil.json!");
+    console.log(`--- Selesai! Berhasil mengupdate ${updateCount} member ---`);
 
   } catch (error) {
-    console.error("Gagal menjalankan scraper:", error);
-    process.exit(1);
+    console.error("DEBUG ERROR DETAIL:", error.message);
+    process.exit(1); // Memberikan sinyal fail ke GitHub Action
   }
 }
 
