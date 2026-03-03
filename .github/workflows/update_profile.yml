@@ -2,27 +2,35 @@ name: Sakurazaka Auto Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Jalan otomatis setiap jam 7 pagi WIB (00:00 UTC)
-  workflow_dispatch: # Tombol manual di tab Actions
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write  # PENTING: Agar bot bisa push perubahan ke repo
 
 jobs:
   update-json:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Update ke v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4 # Update ke v4
         with:
-          node-version: 18
+          node-version: 20 # Gunakan Node terbaru yang sudah dukung fetch bawaan
 
       - name: Jalankan Scraper
         run: node update_member.js
 
       - name: Push Perubahan
         run: |
-          git config --global user.name "GitHub Action Bot"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add blogprofil.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Sync member data from official web [skip ci]" && git push)
+          if git diff --staged --quiet; then
+            echo "Tidak ada perubahan data."
+          else
+            git commit -m "Auto-sync: Update member profiles [skip ci]"
+            git push
+          fi
